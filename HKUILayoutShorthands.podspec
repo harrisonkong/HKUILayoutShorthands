@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
 
   s.name          = 'HKUILayoutShorthands'
-  s.summary       = 'Programmatic shorthand methods for Swift UI layout constraints'
+  s.summary       = 'Shorthand methods for Swift programmatic UI layout constraints'
   s.requires_arc  = true
   s.version       = '1.0.0'
   s.license       = { :type => 'MIT' }
