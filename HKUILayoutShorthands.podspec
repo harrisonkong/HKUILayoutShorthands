@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.version       = '1.0.0'
   s.license       = { :type => 'MIT' }
   s.author        = { 'Harrison Kong' => 'harrisonkong@skyroute66.com' }
-  s.homepage      = 'https://www.skyroute66.com'
+  s.homepage      = 'https://github.com/harrisonkong/HKUILayoutShorthands'
   s.source        = { :git => 'https://github.com/harrisonkong/HKUILayoutShorthands.git',
                       :tag => '1.0.0' }
   s.framework     = 'UIKit'
