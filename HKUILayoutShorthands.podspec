@@ -1,6 +1,5 @@
 # Podspec for HKUILayoutShorthands
 #   Created by Harrison Kong on 2020/01/16.
-#   Copyright © 2020 skyRoute66. All rights reserved.
 
 Pod::Spec.new do |s|
 
