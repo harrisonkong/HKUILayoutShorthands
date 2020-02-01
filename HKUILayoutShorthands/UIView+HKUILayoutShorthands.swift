@@ -30,7 +30,28 @@
 //
 //  Version History
 //  -----------------------------------------------------------------
-//  1.0.0     - 2020/01/16 - initial release
+//  1.0.0     2020/01/16 - initial release
+//  1.0.1     2020/01/31 - added:
+//                          anchorSetHeightToHeightOf(view, multiplier, offset)
+//                          anchorSetHeightLtEqToHeightOf(view, multiplier, offset)
+//                          anchorSetHeightGtEqToHeightOf(view, multiplier, offset)
+//                          anchorSetHeightToWidthOf(view, multiplier, offset)
+//                          anchorSetHeightLtEqToWidthOf(view, multiplier, offset)
+//                          anchorSetHeightGtEqToWidthOf(view, multiplier, offset)
+//                          anchorSetWidthToHeightOf(view, multiplier, offset)
+//                          anchorSetWidthLtEqToHeightOf(view, multiplier, offset)
+//                          anchorSetWidthGtEqToHeightOf(view, multiplier, offset)
+//                          anchorSetWidthToWidthOf(view, multiplier, offset)
+//                          anchorSetWidthLtEqToWidthOf(view, multiplier, offset)
+//                          anchorSetWidthGtEqToWidthOf(view, multiplier, offset)
+//                          anchorSetHeightToSafeAreaHeightOf(view, multiplier, offset)
+//                          anchorSetHeightLtEqToSafeAreaHeightOf(view, multiplier, offset)
+//                          anchorSetWidthToSafeAreaWidthOf(view, multiplier, offset)
+//                          anchorSetWidthLtEqToSafeAreaWidthOf(view, multiplier, offset)
+//
+//                         deprecated: (typos, auto fix suggestions provided)
+//                          anchorSetHeightLtToWidthOf (new: anchorSetHeightLtEqToWidthOf)
+//                          anchorSetHeightGtToWidthOf (new: anchorSetHeightGtEqToWidthOf)
 
 //  Dependencies
 //  -----------------------------------------------------------------
@@ -56,6 +77,41 @@ public extension UIView {
 
     // MARK: - PUBLIC METHODS
     // MARK: -
+    
+    // renamed these typos in 1.0.1, providing backward compatibility and
+    // auto fix suggestions to users
+    
+    @available(*, deprecated, renamed: "anchorSetHeightLtEqToWidthOf")
+    @discardableResult func anchorSetHeightLtToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint {
+           return anchorSetHeightLtEqToWidthOf(anotherView)
+    }
+
+    @available(*, deprecated, renamed: "anchorSetHeightLtEqToWidthOf")
+    @discardableResult func anchorSetHeightLtToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint {
+        return anchorSetHeightLtEqToWidthOf(anotherView, offset: offset)
+    }
+
+    @available(*, deprecated, renamed: "anchorSetHeightLtEqToWidthOf")
+    @discardableResult func anchorSetHeightLtToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
+        return anchorSetHeightLtEqToWidthOf(anotherView, multiplier: multiplier)
+    }
+    
+    @available(*, deprecated, renamed: "anchorSetHeightGtEqToWidthOf")
+    @discardableResult func anchorSetHeightGtToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint {
+           return anchorSetHeightGtEqToWidthOf(anotherView)
+    }
+    
+    @available(*, deprecated, renamed: "anchorSetHeightGtEqToWidthOf")
+    @discardableResult func anchorSetHeightGtToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint {
+        return anchorSetHeightGtEqToWidthOf(anotherView, offset: offset)
+    }
+
+    @available(*, deprecated, renamed: "anchorSetHeightGtEqToWidthOf")
+    @discardableResult func anchorSetHeightGtToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
+        return anchorSetHeightGtEqToWidthOf(anotherView, multiplier: multiplier)
+    }
+    
+    // --- End of Deprecated methods -----------------------
     
     func anchorAllFourSidesToFrameOf(_ anotherView: UIView) {
         anchorAlignTopsWith(anotherView)
@@ -318,6 +374,13 @@ public extension UIView {
         return nslc
     }
 
+    @discardableResult func anchorSetWidthToSafeAreaWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = widthAnchor.constraint(equalTo: anotherView.safeAreaLayoutGuide.widthAnchor, multiplier: multiplier, constant: offset)
+        nslc.isActive = true
+        return nslc
+    }
+    
     @discardableResult func anchorSetWidthLtEqToSafeAreaWidthOf(_ anotherView: UIView) -> NSLayoutConstraint {
         return anchorSetWidthLtEqToSafeAreaWidthOf(anotherView, offset: 0.0)
     }
@@ -354,6 +417,13 @@ public extension UIView {
         return nslc
     }
     
+    @discardableResult func anchorSetWidthToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = widthAnchor.constraint(equalTo: anotherView.widthAnchor, multiplier: multiplier, constant: offset)
+        nslc.isActive = true
+        return nslc
+    }
+    
     @discardableResult func anchorSetWidthLtEqToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint {
         return anchorSetWidthLtEqToWidthOf(anotherView, offset: 0.0)
     }
@@ -372,6 +442,13 @@ public extension UIView {
         return nslc
     }
 
+    @discardableResult func anchorSetWidthLtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = widthAnchor.constraint(lessThanOrEqualTo: anotherView.widthAnchor, multiplier: multiplier, constant: offset)
+        nslc.isActive = true
+        return nslc
+    }
+    
     @discardableResult func anchorSetWidthGtEqToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint {
         return anchorSetWidthGtEqToWidthOf(anotherView, offset: 0.0)
     }
@@ -386,6 +463,13 @@ public extension UIView {
     @discardableResult func anchorSetWidthGtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let nslc = widthAnchor.constraint(greaterThanOrEqualTo: anotherView.widthAnchor, multiplier: multiplier)
+        nslc.isActive = true
+        return nslc
+    }
+
+    @discardableResult func anchorSetWidthGtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = widthAnchor.constraint(greaterThanOrEqualTo: anotherView.widthAnchor, multiplier: multiplier, constant: offset)
         nslc.isActive = true
         return nslc
     }
@@ -408,6 +492,13 @@ public extension UIView {
         return nslc
     }
 
+    @discardableResult func anchorSetWidthToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = widthAnchor.constraint(equalTo: anotherView.heightAnchor, multiplier: multiplier, constant: offset)
+        nslc.isActive = true
+        return nslc
+    }
+    
     @discardableResult func anchorSetWidthLtEqToHeightOf(_ anotherView: UIView) -> NSLayoutConstraint {
         return anchorSetWidthLtEqToHeightOf(anotherView, offset: 0.0)
     }
@@ -415,6 +506,13 @@ public extension UIView {
     @discardableResult func anchorSetWidthLtEqToHeightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let nslc = widthAnchor.constraint(lessThanOrEqualTo: anotherView.heightAnchor, constant: offset)
+        nslc.isActive = true
+        return nslc
+    }
+    
+    @discardableResult func anchorSetWidthLtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = widthAnchor.constraint(lessThanOrEqualTo: anotherView.heightAnchor, multiplier: multiplier, constant: offset)
         nslc.isActive = true
         return nslc
     }
@@ -440,6 +538,13 @@ public extension UIView {
     @discardableResult func anchorSetWidthGtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let nslc = widthAnchor.constraint(greaterThanOrEqualTo: anotherView.heightAnchor, multiplier: multiplier)
+        nslc.isActive = true
+        return nslc
+    }
+
+    @discardableResult func anchorSetWidthGtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = widthAnchor.constraint(greaterThanOrEqualTo: anotherView.heightAnchor, multiplier: multiplier, constant: offset)
         nslc.isActive = true
         return nslc
     }
@@ -480,38 +585,59 @@ public extension UIView {
         return nslc
     }
  
-    @discardableResult func anchorSetHeightLtToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint {
-        return anchorSetHeightLtToWidthOf(anotherView, offset: 0.0)
+    @discardableResult func anchorSetHeightToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = heightAnchor.constraint(equalTo: anotherView.widthAnchor, multiplier: multiplier, constant: offset)
+        nslc.isActive = true
+        return nslc
     }
     
-    @discardableResult func anchorSetHeightLtToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint {
+    @discardableResult func anchorSetHeightLtEqToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint {
+        return anchorSetHeightLtEqToWidthOf(anotherView, offset: 0.0)
+    }
+    
+    @discardableResult func anchorSetHeightLtEqToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let nslc = heightAnchor.constraint(lessThanOrEqualTo: anotherView.widthAnchor, constant: offset)
         nslc.isActive = true
         return nslc
     }
     
-    @discardableResult func anchorSetHeightLtToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
+    @discardableResult func anchorSetHeightLtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let nslc = heightAnchor.constraint(lessThanOrEqualTo: anotherView.widthAnchor, multiplier: multiplier)
         nslc.isActive = true
         return nslc
     }
-
-    @discardableResult func anchorSetHeightGtToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint {
-        return anchorSetHeightGtToWidthOf(anotherView, offset: 0.0)
+    
+    @discardableResult func anchorSetHeightLtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = heightAnchor.constraint(lessThanOrEqualTo: anotherView.widthAnchor, multiplier: multiplier, constant: offset)
+        nslc.isActive = true
+        return nslc
     }
     
-    @discardableResult func anchorSetHeightGtToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint {
+    @discardableResult func anchorSetHeightGtEqToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint {
+        return anchorSetHeightGtEqToWidthOf(anotherView, offset: 0.0)
+    }
+    
+    @discardableResult func anchorSetHeightGtEqToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let nslc = heightAnchor.constraint(greaterThanOrEqualTo: anotherView.widthAnchor, constant: offset)
         nslc.isActive = true
         return nslc
     }
     
-    @discardableResult func anchorSetHeightGtToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
+    @discardableResult func anchorSetHeightGtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let nslc = heightAnchor.constraint(greaterThanOrEqualTo: anotherView.widthAnchor, multiplier: multiplier)
+        nslc.isActive = true
+        return nslc
+    }
+    
+    @discardableResult func anchorSetHeightGtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = heightAnchor.constraint(greaterThanOrEqualTo: anotherView.widthAnchor, multiplier: multiplier, constant: offset)
         nslc.isActive = true
         return nslc
     }
@@ -534,6 +660,13 @@ public extension UIView {
         return nslc
     }
     
+    @discardableResult func anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = heightAnchor.constraint(equalTo: anotherView.safeAreaLayoutGuide.heightAnchor, multiplier: multiplier, constant: offset)
+        nslc.isActive = true
+        return nslc
+    }
+    
     @discardableResult func anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView) -> NSLayoutConstraint {
         return anchorSetHeightLtEqToSafeAreaHeightOf(anotherView, offset: 0.0)
     }
@@ -548,6 +681,13 @@ public extension UIView {
     @discardableResult func anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let nslc = heightAnchor.constraint(equalTo: anotherView.safeAreaLayoutGuide.heightAnchor, multiplier: multiplier)
+        nslc.isActive = true
+        return nslc
+    }
+    
+    @discardableResult func anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = heightAnchor.constraint(lessThanOrEqualTo: anotherView.safeAreaLayoutGuide.heightAnchor, multiplier: multiplier, constant: offset)
         nslc.isActive = true
         return nslc
     }
@@ -570,6 +710,13 @@ public extension UIView {
         return nslc
     }
     
+    @discardableResult func anchorSetHeightToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = heightAnchor.constraint(equalTo: anotherView.heightAnchor, multiplier: multiplier, constant: offset)
+        nslc.isActive = true
+        return nslc
+    }
+    
     @discardableResult func anchorSetHeightLtEqToHeightOf(_ anotherView: UIView) -> NSLayoutConstraint {
         return anchorSetHeightLtEqToHeightOf(anotherView, offset: 0.0)
     }
@@ -588,6 +735,13 @@ public extension UIView {
         return nslc
     }
 
+    @discardableResult func anchorSetHeightLtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = heightAnchor.constraint(lessThanOrEqualTo: anotherView.heightAnchor, multiplier: multiplier, constant: offset)
+        nslc.isActive = true
+        return nslc
+    }
+    
     @discardableResult func anchorSetHeightGtEqToHeightOf(_ anotherView: UIView) -> NSLayoutConstraint {
         return anchorSetHeightGtEqToHeightOf(anotherView, offset: 0.0)
     }
@@ -602,6 +756,13 @@ public extension UIView {
     @discardableResult func anchorSetHeightGtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint {
         translatesAutoresizingMaskIntoConstraints = false
         let nslc = heightAnchor.constraint(greaterThanOrEqualTo: anotherView.heightAnchor, multiplier: multiplier)
+        nslc.isActive = true
+        return nslc
+    }
+    
+    @discardableResult func anchorSetHeightGtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint {
+        translatesAutoresizingMaskIntoConstraints = false
+        let nslc = heightAnchor.constraint(greaterThanOrEqualTo: anotherView.heightAnchor, multiplier: multiplier, constant: offset)
         nslc.isActive = true
         return nslc
     }
