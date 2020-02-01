@@ -120,26 +120,32 @@ anchorSetWidthGtEqToConstant(_ constant: CGFloat) -> NSLayoutConstraint
 anchorSetWidthToSafeAreaWidthOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetWidthToSafeAreaWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetWidthToSafeAreaWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetWidthToSafeAreaWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetWidthLtEqToSafeAreaWidthOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetWidthLtEqToSafeAreaWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetWidthLtEqToSafeAreaWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetWidthLtEqToSafeAreaWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetWidthToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetWidthToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetWidthToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetWidthToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetWidthLtEqToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetWidthLtEqToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetWidthLtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetWidthLtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetWidthGtEqToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetWidthGtEqToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetWidthGtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetWidthGtEqToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetWidthToHeightOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetWidthToHeightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetWidthToHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetWidthToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetHeightToConstant(_ constant: CGFloat) -> NSLayoutConstraint
 anchorSetHeightLtEqToConstant(_ constant: CGFloat) -> NSLayoutConstraint
@@ -148,27 +154,34 @@ anchorSetHeightGtEqToConstant(_ constant: CGFloat) -> NSLayoutConstraint
 anchorSetHeightToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetHeightToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetHeightToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetHeightToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, offset: CGFloat)) -> NSLayoutConstraint
 anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat)) -> NSLayoutConstraint
+anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat)) -> NSLayoutConstraint
 
 anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, offset: CGFloat)) -> NSLayoutConstraint
 anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat)) -> NSLayoutConstraint
+anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat)) -> NSLayoutConstraint
 
 anchorSetHeightToHeightOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetHeightToHeightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetHeightToHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetHeightToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetHeightLtEqToHeightOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetHeightLtEqToHeightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetHeightLtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetHeightLtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetHeightGtEqToHeightOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetHeightGtEqToHeightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetHeightGtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetHeightGtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
+`
 ```
 
 ### Examples:
