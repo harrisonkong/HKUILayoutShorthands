@@ -1,5 +1,6 @@
-# HKUILayoutShorthands
-#### Shorthand methods for Swift programmatic UI layout constraints
+# <img src="./docs/logo256.jpg" width="40" height="40" alt="skyRoute66 logo" style="vertical-align:middle"> HKUILayoutShorthands #
+![Swift](https://img.shields.io/static/v1?label=Swift&message=4.0%20or%20above&color=%23FF4400&style=plastic) ![iOS](https://img.shields.io/static/v1?label=iOS&&message=11.0%20or%20above&color=yellow&style=plastic) ![CocoaPod](https://img.shields.io/static/v1?label=pod&message=1.0.1%20or%20above&color=brightgreen&style=plastic) ![License](https://img.shields.io/static/v1?label=license&message=MIT&color=blue&style=plastic) ![Category](https://img.shields.io/static/v1?label=category&message=User%20Interface&color=blueviolet&style=plastic)
+#### Shorthand methods for Swift programmatic UI layout constraints ####
 
   <img src="screenshots/8Plus_Landscape.png" width="300" /> <img src="screenshots/XS_Landscape.png" width="350" />
 
