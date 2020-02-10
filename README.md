@@ -2,9 +2,25 @@
 ![Swift](https://img.shields.io/static/v1?label=Swift&message=4.0%20or%20above&color=%23FF4400&style=plastic) ![iOS](https://img.shields.io/static/v1?label=iOS&&message=11.0%20or%20above&color=yellow&style=plastic) ![CocoaPod](https://img.shields.io/static/v1?label=pod&message=1.0.1%20or%20above&color=brightgreen&style=plastic) ![License](https://img.shields.io/static/v1?label=license&message=MIT&color=blue&style=plastic) ![Category](https://img.shields.io/static/v1?label=category&message=User%20Interface&color=blueviolet&style=plastic)
 #### Shorthand methods for Swift programmatic UI layout constraints ####
 
-  <img src="screenshots/8Plus_Landscape.png" width="300" /> <img src="screenshots/XS_Landscape.png" width="350" />
+<img src="screenshots/8Plus_Landscape.png" width="300" /> <img src="screenshots/XS_Landscape.png" width="350" />
 
-## INTRODUCTION
+<img src="./docs/cloudline.png" alt="---line---">
+
+## VERSION HISTORY ##
+
+1.0.0 - 2020/01/16 - Initial release
+
+1.0.1 - 2020/01/31 - New shorthand methods added
+
+## MINIMUM REQUIREMENTS ##
+
+**Swift** 4.0 or above
+
+**iOS** 11.0 or above
+
+<img src="./docs/cloudline.png" alt="---line---">
+
+## WHAT IS IT? ##
 
 If you have ever programmatically set up UI elements and layout constraints in Swift, you most likely wrote something like this:
 
@@ -29,7 +45,7 @@ This is why I created these shorthand methods. The above code can simply be writ
 
 Isn't that much better?
 
-## ANOTHER EXAMPLE
+### ANOTHER EXAMPLE ###
 
 Similarly, if you just want to align horizontally and vertically center an element, you would write:
 
@@ -51,7 +67,7 @@ Using my shortcuts, you could just write:
   tableView.anchorAlignCenterWith(myView)
 ```
 
-## MORE EXAMPLES
+### MORE EXAMPLES ###
 
 Here are some more examples of what you can do in other scenarios:
 
@@ -74,20 +90,51 @@ Here are some more examples of what you can do in other scenarios:
 
 As you can see, this reduces the amount of code and also improves readability. Most of the layout constraint scenarios are covered. See the separate user's guide.
 
-## SETUP
+<img src="./docs/cloudline.png" alt="---line---">
 
-### To Run the Demo Application
+## Demo Application ##
 
-Simply clone the demo application from https://github.com/harrisonkong/HKUILayoutShorthandsDemo and build and run.
+Simply clone the [demo application](https://github.com/harrisonkong/HKUILayoutShorthandsDemo) and build and run.
 
-### To Use It In Your Own project
+<img src="./docs/cloudline.png" alt="---line---">
 
-You can either just include the UIView+HKUILayoutShorthands.swift file in your project or use CocoaPod. Don't forget to import the module if you are using CocoaPod:
+## HOW TO INSTALL IT ##
+
+Use one of the following methods:
+
+### 1. Using CocoaPod ###
+
+The module is avabilable via CocoaPods Trunk. Below is an example podfile. If you already use a podfile for your project, all you have to do is add the line that specifies `HKUILayoutShorthands`. The other dependencies will also be automatically installed in the xcworkspace.
 
 ```
-  import HKUILayoutShorthands
+platform :ios, '11.0'
+
+target 'MyTarget' do
+
+  use_frameworks!
+
+  pod 'HKUILayoutShorthands', '~> 1.0.1'
+  # other pods for your project
+
+end
 ```
 
-## CUSTOMIZE
+Don't forget to import the module in your source code:
+
+```
+import HKUILayoutShorthands
+```
+
+### 2. BY INCLUDING THE SOURCE FILES ###
+
+You can also simply include the following source files in your project:
+
+```
+HKUILayoutShorthands.swift
+```
+
+<img src="./docs/cloudline.png" alt="---line---">
+
+## TO CUSTOMIZE IT ##
 
 There are a lot of shortcuts in the file. You might want to delete the ones you don't use in order to cut down on size and build time.
