@@ -6,6 +6,18 @@
 
 <img src="./docs/cloudline.png" alt="---line---">
 
+> # **🛑 SUNSET NOTICE - November 2026**
+>
+> This **CocoaPods** library has been superseded by its **Swift Package Manager (SPM)** successor as part of the new **skyRoute66** Swift package series.
+>
+> This legacy repository **will** remain available for existing projects and historical reference but **will no longer** receive updates, bug fixes, or active maintenance.
+>
+> Developers are encouraged to migrate to ➡️ **[SR66UILayoutShorthands](https://github.com/harrisonkong/SR66UILayoutShorthands)**, which will be the focus of future development.
+>
+> Thank you for your support over the years.
+> 
+> To learn more about other **skyRoute66** products, please visit [https://skyroute66.com](https://skyroute66.com)
+
 ## VERSION HISTORY ##
 
 1.0.0 - 2020/01/16 - Initial release
