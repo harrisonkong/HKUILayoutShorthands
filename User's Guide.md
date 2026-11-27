@@ -54,7 +54,7 @@ anchorAlignCentersWith(_ anotherView: UIView)
 
 ```
 viewA.anchorAllFourSidesToFrameOf(superView)
-viewB.AlignCentersWith(viewC)
+viewB.anchorAlignCentersWith(viewC)
 ```
 
 ## SHORTHANDS FOR HORIZONTAL AND VERTICAL CENTERS
@@ -62,10 +62,10 @@ viewB.AlignCentersWith(viewC)
 ```
 anchorAlignHorizontalCentersWith(_ anotherView: UIView) -> NSLayoutConstraint
 anchorAlignHorizontalCentersWith(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
-anchorAlignHorizontalCentersGtEqTo(_anotherView: UIView) -> NSLayoutConstraint
-anchorAlignHorizontalCentersGtEqTo(_anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
-anchorAlignHorizontalCentersLtEqTo(_anotherView: UIView) -> NSLayoutConstraint
-anchorAlignHorizontalCentersLtEqTo(_anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
+anchorAlignHorizontalCentersGtEqTo(_ anotherView: UIView) -> NSLayoutConstraint
+anchorAlignHorizontalCentersGtEqTo(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
+anchorAlignHorizontalCentersLtEqTo(_ anotherView: UIView) -> NSLayoutConstraint
+anchorAlignHorizontalCentersLtEqTo(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 
 anchorAlignHorizontalCenterWithLeftOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorAlignHorizontalCenterWithLeftOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
@@ -81,12 +81,12 @@ anchorAlignHorizontalCenterGtEqToRightOf(_ anotherView: UIView, offset: CGFloat)
 anchorAlignHorizontalCenterLtEqToRightOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorAlignHorizontalCenterLtEqToRightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 
-anchorAlignVerticalCenterWith(_ anotherView: UIView) -> NSLayoutConstraint
-anchorAlignVerticalCenterWith(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
-anchorAlignVerticalCenterGtEqTo(_ anotherView: UIView) -> NSLayoutConstraint
-anchorAlignVerticalCenterGtEqTo(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
-anchorAlignVerticalCenterLtEqTo(_ anotherView: UIView) -> NSLayoutConstraint
-anchorAlignVerticalCenterLtEqTo(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
+anchorAlignVerticalCentersWith(_ anotherView: UIView) -> NSLayoutConstraint
+anchorAlignVerticalCentersWith(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
+anchorAlignVerticalCentersGtEqTo(_ anotherView: UIView) -> NSLayoutConstraint
+anchorAlignVerticalCentersGtEqTo(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
+anchorAlignVerticalCentersLtEqTo(_ anotherView: UIView) -> NSLayoutConstraint
+anchorAlignVerticalCentersLtEqTo(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 
 anchorAlignVerticalCenterWithTopOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorAlignVerticalCenterWithTopOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
@@ -95,11 +95,11 @@ anchorAlignVerticalCenterGtEqToTopOf(_ anotherView: UIView, offset: CGFloat) -> 
 anchorAlignVerticalCenterLtEqToTopOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorAlignVerticalCenterLtEqToTopOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 
-anchorAlignVerticalCenterWithBottomOf(_ anotherView: UIView) -> NSLayoutConstraint
+anchorAlignVerticalCenterWithBottomtOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorAlignVerticalCenterWithBottomOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
-anchorAlignVerticalCenterGtEqToBottomOf(_ anotherView: UIView) -> NSLayoutConstraint
-anchorAlignVerticalCenterGtEqToBottomOf(_ anotherView: UIView, offset: CGFloat)
-anchorAlignVerticalCenterLtEqToBottomOf(_ anotherView: UIView) -> NSLayoutConstraint
+anchorAlignVerticalCenterGtEqToBottomtOf(_ anotherView: UIView) -> NSLayoutConstraint
+anchorAlignVerticalCenterGtEqToBottomOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
+anchorAlignVerticalCenterLtEqToBottomtOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorAlignVerticalCenterLtEqToBottomOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 ```
 
@@ -107,7 +107,7 @@ anchorAlignVerticalCenterLtEqToBottomOf(_ anotherView: UIView, offset: CGFloat) 
 
 ```
 viewA.anchorAlignHorizontalCentersWith(viewB)
-viewC.anchorAlignVerticalCenterWith(viewD, offset: 50.0)
+viewC.anchorAlignVerticalCentersWith(viewD, offset: 50.0)
 ```
 
 ## SHORTHANDS FOR WIDTHS AND HEIGHTS
@@ -125,7 +125,7 @@ anchorSetWidthToSafeAreaWidthOf(_ anotherView: UIView, multiplier: CGFloat, offs
 anchorSetWidthLtEqToSafeAreaWidthOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetWidthLtEqToSafeAreaWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
 anchorSetWidthLtEqToSafeAreaWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
-anchorSetWidthLtEqToSafeAreaWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
+
 
 anchorSetWidthToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetWidthToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
@@ -149,7 +149,7 @@ anchorSetWidthToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGF
 
 anchorSetHeightToConstant(_ constant: CGFloat) -> NSLayoutConstraint
 anchorSetHeightLtEqToConstant(_ constant: CGFloat) -> NSLayoutConstraint
-anchorSetHeightGtEqToConstant(_ constant: CGFloat) -> NSLayoutConstraint
+anchorSetheightGtEqToConstant(_ constant: CGFloat) -> NSLayoutConstraint
 
 anchorSetHeightToWidthOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetHeightToWidthOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
@@ -157,14 +157,14 @@ anchorSetHeightToWidthOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayout
 anchorSetHeightToWidthOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView) -> NSLayoutConstraint
-anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, offset: CGFloat)) -> NSLayoutConstraint
-anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat)) -> NSLayoutConstraint
-anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat)) -> NSLayoutConstraint
+anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
+anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetHeightToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView) -> NSLayoutConstraint
-anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, offset: CGFloat)) -> NSLayoutConstraint
-anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat)) -> NSLayoutConstraint
-anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat)) -> NSLayoutConstraint
+anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
+anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
+anchorSetHeightLtEqToSafeAreaHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
 anchorSetHeightToHeightOf(_ anotherView: UIView) -> NSLayoutConstraint
 anchorSetHeightToHeightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayoutConstraint
@@ -181,7 +181,7 @@ anchorSetHeightGtEqToHeightOf(_ anotherView: UIView, offset: CGFloat) -> NSLayou
 anchorSetHeightGtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat) -> NSLayoutConstraint
 anchorSetHeightGtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset: CGFloat) -> NSLayoutConstraint
 
-`
+
 ```
 
 ### Examples:
@@ -190,11 +190,11 @@ anchorSetHeightGtEqToHeightOf(_ anotherView: UIView, multiplier: CGFloat, offset
 viewA.anchorSetWidthToConstant(100.0)
 viewB.anchorSetHeightToHeightOf(viewC)
 viewD.anchorSetHeightToWidthOf(viewE)
-viewF.anchorSetWidthToWithOf(viewG, multiplier = 0.5)
-viewH.anchorSetWidthToWidthOf(viewI, offset = 10.0)
+viewF.anchorSetWidthToWidthOf(viewG, multiplier: 0.5)
+viewH.anchorSetWidthToWidthOf(viewI, offset: 10.0)
 ```
 
-## SHORTHANDS FOR TOPS, BOTTOMS, LEFTS (LEADERANCHORS) OR RIGHTS (TRAILINGANCHORS)
+## SHORTHANDS FOR TOPS, BOTTOMS, LEFTS (LEADINGANCHORS) OR RIGHTS (TRAILINGANCHORS)
 
 ```
 anchorAlignTopWithSafeAreaTopOf(_ anotherView: UIView) -> NSLayoutConstraint

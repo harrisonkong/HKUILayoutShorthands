@@ -34,7 +34,7 @@ If you have ever programmatically set up UI elements and layout constraints in S
   myView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
 ```
 
-There is a lot of code just for just one element. If you have a bunch of them to lay out, your code becomes very long and not exactly easy to understand at a glance.
+There is a lot of code just for one element. If you have a bunch of them to lay out, your code becomes very long and not exactly easy to understand at a glance.
 
 This is why I created these shorthand methods. The above code can simply be written as:
 
@@ -64,7 +64,7 @@ Using my shortcuts, you could just write:
   let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
   myView.addSubview(tableView)
-  tableView.anchorAlignCenterWith(myView)
+  tableView.anchorAlignCentersWith(myView)
 ```
 
 ### MORE EXAMPLES ###
@@ -81,11 +81,11 @@ Here are some more examples of what you can do in other scenarios:
   let someViewHeightConstraint =
     someView.anchorSetHeightToWidthOf(anotherView)
 
-  yellowView.setHeightToConstant(200.0)
+  yellowView.anchorSetHeightToConstant(200.0)
 
   purpleView.anchorAlignLeftWithRightOf(orangeView, offset: 10.0)
 
-  insetView.anchorAlignTopGtEqToTopOf(mapView)
+  insetView.anchorAlignTopGtEqTo(mapView)
 ```
 
 As you can see, this reduces the amount of code and also improves readability. Most of the layout constraint scenarios are covered. See the separate user's guide.
